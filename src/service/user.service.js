@@ -1,4 +1,4 @@
-const { getAllUserDB, getByIdUserDB, createUserDB, updateUserDB, deleteUserDB, getByIdEmail } = require('../repository/user.repository');
+const { getAllUserDB, getByIdUserDB, createUserDB, upUserDB, deleteUserDB, getByIdEmail } = require('../repository/user.repository');
 const bcrypt = require('bcrypt');
 
 const salt = 2;
@@ -21,8 +21,8 @@ async function createUser(user) {
     return data;
 };
 
-async function updateUser(_id, user) {
-    const data = await updateUserDB(_id, user);
+async function upUser(_id, user) {
+    const data = await upUserDB(_id, user);
     return data;
 };
 
@@ -38,4 +38,4 @@ async function getAuth(user) {
     return found;
 };
 
-module.exports = { getAllUser, getByIdUser, createUser, updateUser, deleteUser, getAuth };
+module.exports = { getAllUser, getByIdUser, createUser, upUser, deleteUser, getAuth };

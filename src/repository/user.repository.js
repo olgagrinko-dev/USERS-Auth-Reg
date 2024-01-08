@@ -16,7 +16,7 @@ async function createUserDB(user) {
     return data;
 };
 
-async function updateUserDB(_id, user) {
+async function upUserDB(_id, user) {
     await TableUser.updateOne({ _id: new ObjectId(_id) }, { $set: user });
     const data = await TableUser.find();
     return data;
@@ -33,5 +33,4 @@ async function getByIdEmail(email) {
     return data;
 }
 
-
-module.exports = { getAllUserDB, getByIdUserDB, createUserDB, updateUserDB, deleteUserDB, getByIdEmail };
+module.exports = { getAllUserDB, getByIdUserDB, createUserDB, upUserDB, deleteUserDB, getByIdEmail };
